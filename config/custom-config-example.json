@@ -1,0 +1,60 @@
+{
+  "description": "Example custom configuration - minimal fields with strict normalization",
+  "fields": [
+    {
+      "path": "full_name",
+      "from": ["full_name", "name"],
+      "type": "string",
+      "required": true,
+      "notes": "Only include candidates with names"
+    },
+    {
+      "path": "primary_email",
+      "from": ["emails", "email"],
+      "type": "string",
+      "required": true,
+      "notes": "Rename from 'emails' to 'primary_email' in output"
+    },
+    {
+      "path": "phone_e164",
+      "from": ["phones", "phone"],
+      "type": "string",
+      "normalize": "E164",
+      "notes": "Single phone number in E.164 format, omit if missing"
+    },
+    {
+      "path": "location_country",
+      "from": ["location"],
+      "type": "string",
+      "normalize": "ISO3166",
+      "notes": "Extract country code only"
+    },
+    {
+      "path": "job_title",
+      "from": ["headline", "title"],
+      "type": "string",
+      "notes": "Current job title"
+    },
+    {
+      "path": "tech_skills",
+      "from": ["skills"],
+      "type": "string[]",
+      "normalize": "canonical",
+      "notes": "Only include technical skills"
+    },
+    {
+      "path": "overall_confidence",
+      "from": [],
+      "type": "number",
+      "notes": "Confidence score"
+    }
+  ],
+  "include_confidence": true,
+  "on_missing": "omit",
+  "merge_strategy": "confidence",
+  "_comments": {
+    "on_missing": "Set to 'omit' to exclude missing fields from output (cleaner JSON)",
+    "merge_strategy": "Set to 'confidence' to prioritize values with highest confidence scores",
+    "normalization": "Each field can have its own normalization rule"
+  }
+}

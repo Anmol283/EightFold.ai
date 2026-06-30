@@ -1,0 +1,128 @@
+{
+  "description": "Default transformation configuration for candidate data",
+  "fields": [
+    {
+      "path": "candidate_id",
+      "from": ["candidate_id"],
+      "type": "string",
+      "required": false,
+      "notes": "Unique identifier from source system"
+    },
+    {
+      "path": "full_name",
+      "from": ["full_name", "name"],
+      "type": "string",
+      "required": true,
+      "notes": "Candidate's full name"
+    },
+    {
+      "path": "emails",
+      "from": ["emails", "email"],
+      "type": "string[]",
+      "required": true,
+      "notes": "All email addresses, deduplicated"
+    },
+    {
+      "path": "phones",
+      "from": ["phones", "phone"],
+      "type": "string[]",
+      "normalize": "E164",
+      "notes": "Phone numbers in E.164 format"
+    },
+    {
+      "path": "location",
+      "from": ["location"],
+      "type": "object",
+      "schema": {
+        "city": "string",
+        "region": "string",
+        "country": "string"
+      },
+      "notes": "Geographic location with country in ISO 3166-1 alpha-2"
+    },
+    {
+      "path": "links",
+      "from": ["links"],
+      "type": "object[]",
+      "schema": {
+        "type": "string",
+        "url": "string"
+      },
+      "notes": "Social profiles and portfolio links"
+    },
+    {
+      "path": "headline",
+      "from": ["headline", "title"],
+      "type": "string",
+      "notes": "Current job title or professional headline"
+    },
+    {
+      "path": "years_experience",
+      "from": ["years_experience"],
+      "type": "number",
+      "notes": "Total years of professional experience"
+    },
+    {
+      "path": "skills",
+      "from": ["skills"],
+      "type": "string[]",
+      "normalize": "canonical",
+      "notes": "Technical and professional skills (canonicalized)"
+    },
+    {
+      "path": "experience",
+      "from": ["experience"],
+      "type": "object[]",
+      "schema": {
+        "company": "string",
+        "title": "string",
+        "start_date": "string",
+        "end_date": "string",
+        "summary": "string"
+      },
+      "notes": "Work history with dates in YYYY-MM format"
+    },
+    {
+      "path": "education",
+      "from": ["education"],
+      "type": "object[]",
+      "schema": {
+        "institution": "string",
+        "degree": "string",
+        "field": "string",
+        "end_year": "number"
+      },
+      "notes": "Educational background"
+    },
+    {
+      "path": "provenance",
+      "from": [],
+      "type": "object[]",
+      "schema": {
+        "field": "string",
+        "source": "string",
+        "method": "string"
+      },
+      "notes": "Data lineage - where each field value came from"
+    },
+    {
+      "path": "overall_confidence",
+      "from": [],
+      "type": "number",
+      "notes": "Confidence score (0-1) based on data completeness and source agreement"
+    }
+  ],
+  "include_confidence": true,
+  "on_missing": "null",
+  "merge_strategy": "source_priority",
+  "merge_strategy_options": [
+    "source_priority",
+    "confidence",
+    "most_complete"
+  ],
+  "notes": {
+    "merge_strategy": "source_priority - CSV > Recruiter Notes",
+    "on_missing": "null - missing values become null; 'omit' removes them from output",
+    "confidence": "0.0 = unreliable, 1.0 = highly confident"
+  }
+}

@@ -1,0 +1,6 @@
+candidate_id,name,email,phone,current_company,title,location,years_experience,skills,education,headline
+C001,John Smith,john.smith@email.com,+1 (555) 123-4567,TechCorp,Senior Software Engineer,"San Francisco, CA, USA",8,"JavaScript, React, Node.js, Python",UC Berkeley - BS Computer Science,"Passionate about building scalable systems"
+C002,Sarah Johnson,sarah.johnson@email.com,555-987-6543,DataSystems,Data Scientist,"New York, NY, USA",5,"Python, SQL, Machine Learning, Spark",MIT - MS Data Science,"ML Engineer focused on NLP"
+C003,Michael Chen,michael@chen.dev,(415) 555-0123,CloudInnovate,DevOps Engineer,"Seattle, WA, USA",6,"Docker, Kubernetes, AWS, CI/CD",Stanford - BS Systems Engineering,"Cloud infrastructure specialist"
+C004,Emily Rodriguez,emily.r@company.com,+1-555-246-8135,WebDesign,Product Manager,"Austin, TX, USA",7,"Product Strategy, Agile, Analytics",University of Texas - BS Business,"Driving product innovation"
+C005,James Wilson,james.wilson@protonmail.com,555 333 4444,FinanceAI,Quantitative Analyst,"Boston, MA, USA",9,"C++, Java, Python, Financial Modeling",MIT - PhD Finance,"Algorithmic trading specialist"
