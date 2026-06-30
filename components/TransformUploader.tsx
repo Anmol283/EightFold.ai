@@ -186,12 +186,12 @@ C002,Sarah Johnson,sarah.johnson@email.com,555-987-6543,DataSystems,Data Scienti
               placeholder="Paste recruiter notes here or upload a .txt file. Notes can include emails, phone numbers, skills, companies, and experience details."
               value={recruiterNotes}
               onChange={(e) => setRecruiterNotes(e.target.value)}
-              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 h-32"
+              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm text-black placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 h-32"
             />
 
             {recruiterNotes && (
               <div className="mt-2 p-3 bg-slate-50 rounded-lg border border-slate-200">
-                <p className="text-sm text-slate-600">
+                <p className="text-sm text-black">
                   <strong>Notes loaded:</strong> {recruiterNotes.length} characters
                 </p>
               </div>
