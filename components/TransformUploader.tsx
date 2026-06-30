@@ -236,7 +236,7 @@ C002,Sarah Johnson,sarah.johnson@email.com,555-987-6543,DataSystems,Data Scienti
 }`}
                 value={customConfig}
                 onChange={(e) => setCustomConfig(e.target.value)}
-                className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm font-mono focus:outline-none focus:ring-2 focus:ring-blue-500 h-32"
+                className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white text-sm text-slate-900 placeholder:text-slate-400 font-mono focus:outline-none focus:ring-2 focus:ring-blue-500 h-32"
               />
             )}
           </div>
