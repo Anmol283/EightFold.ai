@@ -282,6 +282,4 @@ NODE_ENV=development
 
 `PORT` applies to the standalone Express server.
 
-## Notes
 
-Some older docs in this repository describe previous GitHub or LinkedIn URL based flows. The current app flow is CSV plus recruiter notes, with optional custom configuration.
